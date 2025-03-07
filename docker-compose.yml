@@ -1,0 +1,20 @@
+services:
+  show-user-service:
+    build: ./services/consult_user
+    ports:
+      - "3005:3005"
+    environment:
+      - PG_DB_HOST=${PG_DB_HOST}
+      - PG_DB_PORT=${PG_DB_PORT}
+      - PG_DB_USER=${PG_DB_USER}
+      - PG_DB_PASSWORD=${PG_DB_PASSWORD}
+      - PG_DB_NAME=${PG_DB_NAME}
+      - JWT_SECRET=${JWT_SECRET}
+    networks:
+      - my_global_network  # Conectamos a la red externa
+    restart: unless-stopped
+
+networks:
+  my_global_network:
+    external: true  # Usamos la red creada manualmente
+
