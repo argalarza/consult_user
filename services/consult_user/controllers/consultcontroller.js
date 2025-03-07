@@ -4,7 +4,7 @@ const showUser = async (req, res) => {
   const { username } = req.params;
 
   try {
-    // Buscar al usuario en PostgreSQL
+    // Buscar al usuario en PostgreSQL,
     const user = await getUserByUsernameFromPostgres(username);
     
     if (!user) {
