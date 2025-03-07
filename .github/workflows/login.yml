@@ -65,7 +65,7 @@ jobs:
             git reset --hard
             git pull origin main
           else
-            git clone -b main https://github.com/tuusuario/show-user-service.git show-user-service
+            git clone -b main https://github.com/argalarza/consult_user.git show-user-service
             cd show-user-service
           fi
 
